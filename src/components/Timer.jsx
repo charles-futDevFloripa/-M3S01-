@@ -30,10 +30,17 @@ const Timer = ({ minutes = 1 }) => {
   };
 
   return (
-    <div>
-      <h2>Temporizador</h2>
-      <div>{formatTime(timeLeft)}</div>
-      <button onClick={handleStart} disabled={isActive || timeLeft === 0}>
+    <div className='text-center'>
+      <div className='text-9xl font-bold mb-6'>{formatTime(timeLeft)}</div>
+      <button
+        onClick={handleStart}
+        disabled={isActive || timeLeft === 0}
+        className={`bg-green-500 text-white px-6 py-2 rounded ${
+          isActive || timeLeft === 0
+            ? 'opacity-50 cursor-not-allowed'
+            : 'hover:bg-green-600'
+        } transition duration-200`}
+      >
         Iniciar
       </button>
     </div>

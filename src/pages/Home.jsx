@@ -10,11 +10,22 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <h2>Página Inicial</h2>
-      <p>Bem-vindo à Página Inicial!</p>
-      <button onClick={handleLogout}>Sair</button>
-      <Timer minutes={1} />
+    <div className='min-h-screen flex flex-col'>
+      {/* Cabeçalho */}
+      <header className='flex justify-between items-center p-4 bg-blue-500 text-white'>
+        <h2 className='text-2xl font-semibold'>Bem-vindo</h2>
+        <button
+          onClick={handleLogout}
+          className='bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded transition duration-200'
+        >
+          Sair
+        </button>
+      </header>
+
+      {/* Conteúdo Principal */}
+      <main className='flex flex-grow items-center justify-center bg-gray-100'>
+        <Timer minutes={1} />
+      </main>
     </div>
   );
 };
